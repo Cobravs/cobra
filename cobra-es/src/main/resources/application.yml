@@ -1,0 +1,11 @@
+ server:
+   port: 8090
+ spring:
+   elasticsearch:
+     rest:
+       uris: ["http://172.16.5.35:9200"]
+       connection-timeout: 1s
+       read-timeout: 10s
+     index.test: test
+     max-result-window: 100000000
+ #spring.data.elasticsearch: 172.16.5.35:9300
