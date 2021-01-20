@@ -1,15 +1,13 @@
-package com.cobra.common;
+package com.cobra.common.sign;
+
+import java.nio.charset.StandardCharsets;
+import java.security.Security;
 
 import org.bouncycastle.crypto.digests.SM3Digest;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.bouncycastle.pqc.math.linearalgebra.ByteUtils;
 
-import java.nio.charset.StandardCharsets;
-import java.security.Security;
-
-
 public class SM3Utils {
-
 
     static {
         Security.addProvider(new BouncyCastleProvider());
@@ -27,11 +25,5 @@ public class SM3Utils {
         byte[] hash = new byte[digest.getDigestSize()];
         digest.doFinal(hash, 0);
         return hash;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(getSM3("superadmin1234566"));
-        System.out.println(getSM3("admin123456"));
-        System.out.println(getSM3("12345612345678"));
     }
 }

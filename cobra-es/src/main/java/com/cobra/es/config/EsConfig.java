@@ -72,7 +72,7 @@ public class EsConfig {
             localIndex.set(map);
         }
 
-        public static synchronized void destory() {
+        public static synchronized void destroy() {
             localIndex.remove();
         }
     }

@@ -36,11 +36,10 @@ public class EsAspect {
         if (index == null) {
             return;
         }
-
         switch (index) {
             case CUSTOM:
                 String pattern = annotation.pattern();
-                if (pattern==null||pattern.equals("")) {
+                if (pattern == null || pattern.equals("")) {
                     return;
                 }
                 EsConfig.setCallIndexNameSuffix(pattern);
@@ -51,16 +50,13 @@ public class EsAspect {
             default:
                 EsConfig.setCurrentCallIndexNameSuffix();
                 return;
-
         }
-
-
     }
 
 
     @After("esAnnotation()")
     public void doAfter() {
-        EsConfig.EsThreadLocal.destory();
+        EsConfig.EsThreadLocal.destroy();
     }
 
     public EsAnnotation getDeclaredAnnotation(JoinPoint joinPoint) {
