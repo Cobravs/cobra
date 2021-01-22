@@ -21,6 +21,7 @@
         <module>cobra-common</module>
         <module>cobra-es</module>
         <module>cobra-web</module>
+        <module>cobra-ldap</module>
     </modules>
 
     <properties>
