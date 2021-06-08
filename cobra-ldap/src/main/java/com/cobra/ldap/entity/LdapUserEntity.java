@@ -13,4 +13,5 @@ import org.springframework.ldap.odm.annotations.Entry;
 @Entry(objectClasses = {"inetOrgPerson"},base = "dc=my-domain,dc=com")
 public class LdapUserEntity {
 
+    private String userName;
 }
